@@ -1,10 +1,11 @@
 import SwiftUI
 import Shared
 
-class CounterState: ObservableObject, CounterViewModelState {
-
+class CounterState: ObservableObject {
     @Published var counter: Int32 = 0
+}
 
+extension CounterState: CounterViewModelState {
     func getCounter() -> Int32 {
         counter
     }
